@@ -364,8 +364,11 @@ hr{
         
     }
     .btnSticky{
-        height: 185%;
+        height: 100%;
         justify-content: space-between;
+    }
+    .btnSticky a{
+        margin-top: 30rem;
     }
     .img{
         position: relative;
@@ -424,4 +427,5 @@ hr{
    .inf,.inf1,.inf3{
     height: 0;
    }
+
   }
