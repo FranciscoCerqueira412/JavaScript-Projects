@@ -28,7 +28,7 @@ searchBtn.addEventListener("click", (e) => {
             container.style.height = "600px";
             weather404.style.display = "none";
             description.innerHTML = json.weather[0].description;
-            humidity.innerHTML = json.main.humidity;
+            humidity.innerHTML = json.main.humidity +" %";
             windVelocity.innerHTML = Math.round(json.wind.speed) + " Km/h";
             temperature.innerHTML = Math.round(json.main.temp) + "<span>ºC</span> ";
 
