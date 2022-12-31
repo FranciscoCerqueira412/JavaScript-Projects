@@ -12,10 +12,11 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(16, 42, 57);    
+    background-color: rgb(16, 42, 57);
+    gap: 2rem;    
 }
 .container{
-    position: relative;
+    
     width: 400px;
     height: 100px;
     background-color: rgb(255, 255, 255);
@@ -63,6 +64,11 @@ body{
     font-size: 1.5rem;
     color: #06283D;
 }
+.country{
+    font-weight: 600;
+    color: rgb(255, 0, 208);
+    display: none;
+}
 .weather-box{
     display: flex;
     flex-direction: column;
@@ -72,6 +78,7 @@ body{
 .weather-img{
     width: 60%;
     margin-top: 30px;
+    display: none;
 }
 .weather-box .temperature{
     position: relative;
@@ -127,14 +134,41 @@ body{
     display: none;
     width: 100%;
     text-align: center;
+    
 }
 .weather-404 img{
-    width: 90%;
-    margin-top: 1.4rem;
+    width: 70%;
+    margin-top: 1.2rem;
 }
 .weather-404 p{
     margin-top: 1rem;
     color: #9c1212;
     font-size: 1.1rem;
     font-weight: 400;
+}
+.streetview{
+    border-radius: 20px;
+    width: 400px;
+    display: none;
+}
+.streetview iframe{
+    width: 100%;
+    display: none;
+
+
+}
+@media screen and (max-width: 760px)  {
+
+    body{
+        flex-direction: column;
+    }
+
+    .container{
+            overflow: visible;
+
+    }
+    .streetview{
+        width: 400px;
+        height: 100px;
+    }
 }

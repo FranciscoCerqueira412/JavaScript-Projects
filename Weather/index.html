@@ -4,10 +4,9 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
         <script src="https://kit.fontawesome.com/6d33d9dd57.js" crossorigin="anonymous"></script>
 
-        
+        <link rel="shortcut icon" href="images/Circle-icons-weather.svg.jpg" type="image/x-icon">
         <link rel="stylesheet" href="style.css">
         <title>Advanced Weather App</title>
     </head>
@@ -19,8 +18,11 @@
                 <input type="text" placeholder="Enter Your Location">
                 <button class="fa-solid fa-magnifying-glass"></button>
             </div>
+            <div class="country">
+                <span class="country">PT</span>
+            </div>
             <div class="weather-404">
-                <img src="images/404.png" alt="">
+                <img src="images/3866444.png" alt="">
                 <p>Ups! Invalid Location :/</p>
             </div>
             <div class="weather-box">
@@ -44,10 +46,20 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
 
+        <div class="streetview">
+            <iframe
+                width="600"
+                height="600"
+                frameborder="0" style="border-radius: 20px;"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed/v1/view?key=AIzaSyBksX_TcLukUuLk_KlR7dsru24SWb3EBGg&&&center=-33.8569,151.2152
+                &zoom=10
+                &maptype=roadmap"
+                allowfullscreen>
+            </iframe>
+        </div>
         <script src="script.js"></script>
     </body>
 </html>
