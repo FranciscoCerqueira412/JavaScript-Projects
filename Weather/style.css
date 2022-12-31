@@ -163,10 +163,6 @@ body{
         flex-direction: column;
     }
 
-    .container{
-            overflow: visible;
-
-    }
     .streetview{
         width: 400px;
         height: 100px;
