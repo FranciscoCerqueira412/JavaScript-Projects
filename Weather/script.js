@@ -12,11 +12,15 @@ const street=document.querySelector(".streetview");
 
 
 
+
 searchBtn.addEventListener("click", (e) => {
     
     const APIkey = "2268e313b4bbc604cdf747ec471661ee";
     const search = document.querySelector(".search-box input").value;
-
+    const timeElapsed = Date.now();
+    const today = new Date(timeElapsed);
+    today.toISOString();
+    console.log(Number(today.getUTCHours())+1);
     if (search === "") return;
 
     fetch(
