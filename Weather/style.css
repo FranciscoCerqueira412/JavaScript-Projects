@@ -98,7 +98,7 @@ body{
 .weather-box p{
     font-size: 1.1rem;
     font-weight: 500;
-    color: #06283Ddc;
+    color: rgb(255, 0, 208);
     text-transform: capitalize;
 }
 .weather-details{
@@ -126,7 +126,7 @@ body{
     font-weight: 500;
 }
 .weather-details p{
-    color: #06283D;
+    color: rgb(255, 0, 208);
     font-weight: 500;
     font-size: 1rem;
 }
@@ -147,14 +147,13 @@ body{
     font-weight: 400;
 }
 .streetview{
-    border-radius: 20px;
     width: 400px;
     display: none;
 }
 .streetview iframe{
     width: 100%;
     display: none;
-
+    border-radius: 20px;
 
 }
 @media screen and (max-width: 760px)  {
