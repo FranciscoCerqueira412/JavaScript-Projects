@@ -61,6 +61,10 @@ function getWeather(){
                 const hourstoday = new Date(timeElapsed).getUTCHours();
                 const minutestoday = new Date(timeElapsed).getUTCMinutes();
                 let hoursCountry=Math.floor(Number(hourstoday)+(json.timezone/3600))
+
+                if(hoursCountry>='24'){
+                    hoursCountry-='24';
+                }
                 
                 if (hoursCountry=='-9') {
                     console.log(Math.floor(time.innerHTML="15"+":"+minutestoday))
@@ -113,6 +117,7 @@ function getWeather(){
                 else{
                     dayNight.className="fa-solid fa-moon";
                 }
+
 
 
             streetview .src="https://www.google.com/maps/embed/v1/view?key=AIzaSyBksX_TcLukUuLk_KlR7dsru24SWb3EBGg&&&center="+mapsLat+","+mapsLon+"&zoom=11&maptype=satellite"
