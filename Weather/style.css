@@ -6,14 +6,17 @@
     padding: 0;
     border:0;
     box-sizing: border-box;
-    touch-action: manipulation;
 }
 body{
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(16, 57, 19);
+    background:linear-gradient(180deg,rgb(37, 7, 57),rgb(93, 18, 143));
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    background-attachment: fixed;
     gap: 2rem;    
 }
 .container{
@@ -71,7 +74,7 @@ body{
 .search-box i{
     position: absolute;
     font-size: 1.5rem;
-    color: #06283D;
+    color: rgb(164, 27, 255);
 }
 .country{
     font-weight: 600;
@@ -183,7 +186,7 @@ body{
 }
 .time i{
     font-size: 1.5rem;     
-    color: #4d7085;
+    color: rgb(164, 27, 255);
 }
 
 
@@ -222,11 +225,11 @@ body{
     text-align: left;
 }
 .item:nth-child(2n+1){
-    background-color: #031521da;
+    background-color: rgb(37, 7, 57);
 }
 
 .item:nth-child(2n+2){
-    background-color: #0a4265cc;
+    background-color: rgb(78, 17, 118);
 }
 
 .item .imgItem{

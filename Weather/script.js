@@ -35,6 +35,7 @@ function getWeather(){
                 time.style.opacity="0%";
                 dn.style.display="none";
                 itemContainer.style.display="none";
+                temperature.style.opacity="0%";
                 return;
             }
             //console.log(json);
@@ -56,6 +57,7 @@ function getWeather(){
             dn.style.display="flex";
             itemContainer.style.display="flex";
             window.scrollTo(0, 0);
+            temperature.style.opacity="100%";
             
 
                 const timeElapsed = Date.now();
@@ -210,7 +212,7 @@ function fiveDaysWeather(){
         }
         forecast[date].push(forecastItem);
       }
-      //console.log(forecast);
+      console.log(forecast);
 
       const itemzero=document.querySelector(".zero");
 
@@ -259,13 +261,13 @@ function fiveDaysWeather(){
                 const min0=Math.floor(minTemp0);
                 const max0=Math.ceil(maxTemp0);
                 const itemImgicon0=document.querySelector(".zero img");
-const day0=document.querySelector(".zero p");
-const tempM0=document.querySelector(".zero span");
-console.log(`Date: ${date0}, Min temp: ${min0}, Max temp: ${max0}`);
-day0.innerHTML=date0;
-tempM0.innerHTML=max0+"º"+"&nbsp;&nbsp;"+min0+"º";
-            const hou0=zeroDateForecast[0].dt_txt.substring(13,11);
-function it0(){
+                const day0=document.querySelector(".zero p");
+                const tempM0=document.querySelector(".zero span");
+                console.log(`Date: ${date0}, Min temp: ${min0}, Max temp: ${max0}`);
+                day0.innerHTML=date0;
+                tempM0.innerHTML=max0+"º"+"&nbsp;&nbsp;"+min0+"º";
+                            const hou0=zeroDateForecast[0].dt_txt.substring(13,11);
+                function it0(){
                 switch (icon0) {
                     case "Clear":
                         itemImgicon0.src="images/clear.png";
