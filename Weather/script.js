@@ -37,7 +37,7 @@ function getWeather(){
                 itemContainer.style.display="none";
                 return;
             }
-            console.log(json);
+            //console.log(json);
             container.style.height = "600px";
             weather404.style.display = "none";
             weatherImage.style.display="block";
@@ -99,7 +99,7 @@ function getWeather(){
                 }
 
                 else{
-                    console.log(Math.floor(time.innerHTML=formatHours(hoursCountry)+":"+formatHours(minutestoday)))
+                    Math.floor(time.innerHTML=formatHours(hoursCountry)+":"+formatHours(minutestoday))
                 }
 
                 //add 0 before number if less than 10
@@ -200,27 +200,42 @@ function fiveDaysWeather(){
         }
         forecast[date].push(forecastItem);
       }
-      console.log(forecast);
+      //console.log(forecast);
 
-            const zeroDate = Object.keys(forecast)[-1];
+            
             const firstDate = Object.keys(forecast)[0];
             const secondDate = Object.keys(forecast)[1];
             const thirdDate = Object.keys(forecast)[2];
             const fourthDate = Object.keys(forecast)[3];
             const fifthDate = Object.keys(forecast)[4];
-            const sixthDate = Object.keys(forecast)[5];
+            const zeroDate = Object.keys(forecast)[5];
 
-            const zeroDateForecast = forecast[zeroDate];
+            
             const firstDateForecast = forecast[firstDate];
             const secondDateForecast = forecast[secondDate];
             const thirdDateForecast = forecast[thirdDate];
             const fourthDateForecast = forecast[fourthDate];
             const fifthDateForecast = forecast[fifthDate];
-            const sixthDateForecast = forecast[sixthDate];
+            const zeroDateForecast = forecast[zeroDate];
 
 
 
 
+            let minTemp0 = Number.MAX_SAFE_INTEGER;
+            let maxTemp0 = Number.MIN_SAFE_INTEGER;
+            let icon0 ='';
+
+
+    zeroDateForecast.forEach(forecastItem => {
+        const temp0 = forecastItem.main.temp;
+        icon0=icon0 = forecastItem.weather[0].main;
+        if (temp0 < minTemp0) {
+            minTemp0 = temp0;
+        }
+        if (temp0 > maxTemp0) {
+            maxTemp0 = temp0;
+        }
+        });
 
             let minTemp1 = Number.MAX_SAFE_INTEGER;
             let maxTemp1 = Number.MIN_SAFE_INTEGER;
@@ -235,6 +250,7 @@ function fiveDaysWeather(){
             if (temp1 > maxTemp1) {
                 maxTemp1 = temp1;
             }
+            console.log(firstDateForecast)
             });
             let minTemp2 = Number.MAX_SAFE_INTEGER;
             let maxTemp2 = Number.MIN_SAFE_INTEGER;
@@ -295,41 +311,50 @@ function fiveDaysWeather(){
                             });
                             
                         
+                        
                         const date1=firstDate.substring(10,8).split('-').reverse().join('-');
                         const date2=secondDate.substring(10,8).split('-').reverse().join('-');
                         const date3=thirdDate.substring(10,8).split('-').reverse().join('-');
                         const date4=fourthDate.substring(10,8).split('-').reverse().join('-');
                         const date5=fifthDate.substring(10,8).split('-').reverse().join('-');
-                        const min1=Math.round(minTemp1);
-                        const max1=Math.round(maxTemp1);
-                        const min2=Math.round(minTemp2);
-                        const max2=Math.round(maxTemp2);
-                        const min3=Math.round(minTemp3);
-                        const max3=Math.round(maxTemp3);
-                        const min4=Math.round(minTemp4);
-                        const max4=Math.round(maxTemp4);
-                        const min5=Math.round(minTemp5);
-                        const max5=Math.round(maxTemp5);
-                        //const itemImgicon1=document.querySelector(".one img");
+                        const date0=zeroDate.substring(10,8).split('-').reverse().join('-');
+
+                        const min1=Math.floor(minTemp1);
+                        const max1=Math.ceil(maxTemp1);
+                        const min2=Math.floor(minTemp2);
+                        const max2=Math.ceil(maxTemp2);
+                        const min3=Math.floor(minTemp3);
+                        const max3=Math.ceil(maxTemp3);
+                        const min4=Math.floor(minTemp4);
+                        const max4=Math.ceil(maxTemp4);
+                        const min5=Math.floor(minTemp5);
+                        const max5=Math.ceil(maxTemp5);
+                        const min0=Math.floor(minTemp0);
+                        const max0=Math.ceil(maxTemp0);
+
+                        
                         const itemImgicon1=document.querySelector(".two img");
                         const itemImgicon2=document.querySelector(".three img");
                         const itemImgicon3=document.querySelector(".four img");
                         const itemImgicon4=document.querySelector(".five img");
                         const itemImgicon5=document.querySelector(".six img");
+                        const itemImgicon0=document.querySelector(".zero img");
 
-                        const day1=document.querySelector(".one p");
+                        
                         const day2=document.querySelector(".two p");
                         const day3=document.querySelector(".three p");
                         const day4=document.querySelector(".four p");
                         const day5=document.querySelector(".five p");
                         const day6=document.querySelector(".six p");
+                        const day0=document.querySelector(".zero p");
 
-                        const tempM1=document.querySelector(".one span");
+                        
                         const tempM2=document.querySelector(".two span");
                         const tempM3=document.querySelector(".three span");
                         const tempM4=document.querySelector(".four span");
                         const tempM5=document.querySelector(".five span");
                         const tempM6=document.querySelector(".six span");
+                        const tempM0=document.querySelector(".zero span");
 
 
 
@@ -340,6 +365,7 @@ function fiveDaysWeather(){
             console.log(`Date: ${date3}, Min temp: ${min3}, Max temp: ${max3}`);
             console.log(`Date: ${date4}, Min temp: ${min4}, Max temp: ${max4}`);
             console.log(`Date: ${date5}, Min temp: ${min5}, Max temp: ${max5}`);
+            console.log(`Date: ${date0}, Min temp: ${min0}, Max temp: ${max0}`);
 
 
 
@@ -348,14 +374,16 @@ function fiveDaysWeather(){
             day4.innerHTML=date3;
             day5.innerHTML=date4;
             day6.innerHTML=date5;
+            day0.innerHTML=date0;
             tempM2.innerHTML=max1+"º"+"&nbsp;&nbsp;"+min1+"º";
             tempM3.innerHTML=max2+"º"+"&nbsp;&nbsp;"+min2+"º";
             tempM4.innerHTML=max3+"º"+"&nbsp;&nbsp;"+min3+"º";
             tempM5.innerHTML=max4+"º"+"&nbsp;&nbsp;"+min4+"º";
             tempM6.innerHTML=max5+"º"+"&nbsp;&nbsp;"+min5+"º";
+            tempM0.innerHTML=max0+"º"+"&nbsp;&nbsp;"+min0+"º";
 
 
-            console.log(icon1,icon2,icon3,icon4,icon5);
+            console.log(icon1,icon2,icon3,icon4,icon5,icon0);
 
 
 
@@ -644,11 +672,69 @@ function fiveDaysWeather(){
                         itemImgicon5.src = "";
                 }
             }
+            function it0(){
+                switch (icon0) {
+                    case "Clear":
+                        itemImgicon0.src="images/clear.png";
+                        break;
+            
+                    case "Thunderstorm":
+                        itemImgicon0.src = "images/thunder.png";
+                        break;
+            
+                    case "Drizzle":
+                        itemImgicon0.src = "images/drizzle.png";
+                        break;
+            
+                    case "Rain":
+                        itemImgicon0.src = "images/rain.png";
+                        break;
+            
+                    case "Clouds":
+                        itemImgicon0.src = "images/cloud.png";
+                        break;
+            
+                    case "Mist":
+                        itemImgicon0.src = "images/mist.png";
+                        break;
+                    case "Smoke":
+                        itemImgicon0.src = "images/haze.png";
+                        break;
+                    case "Haze":
+                        itemImgicon0.src = "images/haze.png";
+                        break;
+                    case "Dust":
+                        itemImgicon0.src = "images/dust.png";
+                        break;
+                    case "Fog":
+                        itemImgicon0.src = "images/fog.png";
+                        break;
+                    case "Sand":
+                        itemImgicon0.src = "images/sand.png";
+                        break;
+                    case "Ash":
+                        itemImgicon0.src = "dust/mist.png";
+                        break;
+                    case"Squall":
+                        itemImgicon0.src = "images/squall.png";
+                        break;
+                    case "Tornado":
+                        itemImgicon0.src = "images/tornado.png";
+                        break;
+            
+                    case "Snow":
+                        itemImgicon0.src = "images/snow.png";
+                        break;
+                    default:
+                        itemImgicon0.src = "";
+                }
+            }
             it1();
             it2();
             it3();
             it4();
             it5();
+            it0();
 
      
     });
