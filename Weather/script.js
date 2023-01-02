@@ -189,7 +189,11 @@ function fiveDaysWeather(){
     .then(response => response.json())
     .then(data => {
       //console.log(data);  // data contains the forecast for the next 5 days
-  
+        if (data.cod=='404'){
+            return;
+        }
+
+
       // Get the forecast for each day
       const forecast = [];
       for (let i = 0; i < data.list.length; i++) {
@@ -250,7 +254,7 @@ function fiveDaysWeather(){
             if (temp1 > maxTemp1) {
                 maxTemp1 = temp1;
             }
-            console.log(firstDateForecast)
+
             });
             let minTemp2 = Number.MAX_SAFE_INTEGER;
             let maxTemp2 = Number.MIN_SAFE_INTEGER;
@@ -309,6 +313,7 @@ function fiveDaysWeather(){
                             }
 
                             });
+                            console.log(fifthDateForecast);
                             
                         
                         
@@ -318,6 +323,7 @@ function fiveDaysWeather(){
                         const date4=fourthDate.substring(10,8).split('-').reverse().join('-');
                         const date5=fifthDate.substring(10,8).split('-').reverse().join('-');
                         const date0=zeroDate.substring(10,8).split('-').reverse().join('-');
+
 
                         const min1=Math.floor(minTemp1);
                         const max1=Math.ceil(maxTemp1);
@@ -359,6 +365,7 @@ function fiveDaysWeather(){
 
 
 
+
                         
             console.log(`Date: ${date1}, Min temp: ${min1}, Max temp: ${max1}`);
             console.log(`Date: ${date2}, Min temp: ${min2}, Max temp: ${max2}`);
@@ -384,6 +391,28 @@ function fiveDaysWeather(){
 
 
             console.log(icon1,icon2,icon3,icon4,icon5,icon0);
+
+
+            
+            const hou1=firstDateForecast[0].dt_txt.substring(13,11);
+            const hou2=secondDateForecast[0].dt_txt.substring(13,11);
+            const hou3=thirdDateForecast[0].dt_txt.substring(13,11);
+            const hou4=fourthDateForecast[0].dt_txt.substring(13,11);
+            const hou5=fifthDateForecast[0].dt_txt.substring(13,11);
+            const hou0=zeroDateForecast[0].dt_txt.substring(13,11);
+
+            const ih1=document.querySelector(".itemHour .ih1");
+            const ih2=document.querySelector(".itemHour .ih2");
+            const ih3=document.querySelector(".itemHour .ih3");
+            const ih4=document.querySelector(".itemHour .ih4");
+            const ih5=document.querySelector(".itemHour .ih5");
+            const ih0=document.querySelector(".itemHour .ih0");
+            ih1.innerHTML=hou1+'H';
+            ih2.innerHTML=hou2+'H';
+            ih3.innerHTML=hou3+'H';
+            ih4.innerHTML=hou4+'H';
+            ih5.innerHTML=hou5+'H';
+            ih0.innerHTML=hou0+'H';
 
 
 
@@ -736,8 +765,9 @@ function fiveDaysWeather(){
             it5();
             it0();
 
-     
     });
+    
+    
   
 }
 
