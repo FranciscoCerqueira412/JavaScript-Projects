@@ -17,7 +17,7 @@ body{
 }
 .container{
     
-    width: 400px;
+    width: 500px;
     height: 100px;
     background-color: rgb(255, 255, 255);
     padding: 28px 32px;
@@ -46,6 +46,10 @@ body{
     color: rgba(0, 0, 0, 0.463);
     text-transform: capitalize;
 }
+.search-box input:focus{
+    outline: 1px solid #06283d6d;
+    border-radius: 5px;
+}
 .search-box button{
     width: 50px;
     height: 50px;
@@ -54,6 +58,9 @@ body{
     border-radius: 50%;
     font-size: 1.4rem;
     color: #06283D;
+}
+.search-box button:focus{
+    border: 1px solid #06283d6d;
 }
 .search-box button:hover{
     background-color: #06283d73;
@@ -76,16 +83,16 @@ body{
     align-items: center;
 }
 .weather-img{
-    width: 60%;
-    margin-top: 30px;
+    width: 45%;
     display: none;
+    
 }
 .weather-box .temperature{
     position: relative;
     color: #06283D;
     font-size: 4rem;
     font-weight: 800;
-    margin-top: 30px;
+    margin-top: 10px;
 
 }
 .weather-box span{
@@ -103,7 +110,7 @@ body{
 }
 .weather-details{
     width: 100%;
-    margin-top: 4rem;
+    margin-top: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -137,7 +144,7 @@ body{
     
 }
 .weather-404 img{
-    width: 70%;
+    width: 55%;
     margin-top: 1.2rem;
 }
 .weather-404 p{
@@ -156,6 +163,76 @@ body{
     border-radius: 20px;
 
 }
+.time{
+    display: flex;
+    opacity: 0%;
+    align-items: center;
+    justify-content: start;
+}
+
+.time p{
+    font-weight: 600;
+    color: #06283D;
+    opacity: 0%;
+    color: #06283D;
+    margin-right: 10px;
+}
+.time i{
+    font-size: 1.5rem;     
+    color: #4d7085;
+}
+
+
+
+#forecast{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin-top: 1rem;
+    border-radius: 10px;
+    padding: 2rem 0rem;
+    display: none;
+}
+
+.item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+    border-radius: 20%;
+    padding: 2rem 0rem;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin-right: 0.2rem;
+    
+}
+.item p{
+    font-weight: 600;
+    font-size: 0.7rem;
+    width: 70%;
+    text-align: left;
+}
+.item:nth-child(2n+1){
+    background-color: #031521da;
+}
+
+.item:nth-child(2n+2){
+    background-color: #0a4265cc;
+}
+
+.item .imgItem{
+    width: 30px;
+    height: 30px;
+}
+.TempMM{
+    font-size: 0.8rem;
+}
+
 @media screen and (max-width: 760px)  {
 
     body{
