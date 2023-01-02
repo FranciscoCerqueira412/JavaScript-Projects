@@ -111,7 +111,7 @@ body{
 }
 .weather-details{
     width: 100%;
-    margin-top: 0.5rem;
+    margin-top: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -254,6 +254,10 @@ body{
     width: 100vw;
 }
 
+.imgItem p{
+    color: #9c1212;
+
+}
 
 
 @media screen and (max-width: 760px)  {
@@ -280,6 +284,6 @@ body{
 
     }
     .weather-details{
-        margin-top: 3rem;
+        margin-top: 2.5rem;
     }
 }
