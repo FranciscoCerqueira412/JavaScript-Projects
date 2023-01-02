@@ -13,7 +13,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(16, 42, 57);
+    background-color: rgb(16, 57, 19);
     gap: 2rem;    
 }
 .container{

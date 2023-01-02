@@ -55,6 +55,7 @@ function getWeather(){
             dn.style.opacity="100%";
             dn.style.display="flex";
             itemContainer.style.display="flex";
+            window.scrollTo(0, 0);
             
 
                 const timeElapsed = Date.now();
@@ -482,6 +483,7 @@ it0();
             tempM5.innerHTML=max4+"º"+"&nbsp;&nbsp;"+min4+"º";
             tempM6.innerHTML=max5+"º"+"&nbsp;&nbsp;"+min5+"º";
             //tempM0.innerHTML=max0+"º"+"&nbsp;&nbsp;"+min0+"º";
+            window.scrollTo(0, 0);
 
 
             console.log(icon1,icon2,icon3,icon4,icon5,);
