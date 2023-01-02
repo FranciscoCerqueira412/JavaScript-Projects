@@ -24,6 +24,7 @@ body{
     overflow: hidden;
     border-radius: 20px;
     font-family: 'Roboto', sans-serif;
+    box-shadow: -10px 9px 20px 5px rgba(0, 0, 0, 0.258);
 }
 .search-box{
     width: 100%;
@@ -156,11 +157,13 @@ body{
 .streetview{
     width: 400px;
     display: none;
+    
 }
 .streetview iframe{
     width: 100%;
     display: none;
     border-radius: 20px;
+    box-shadow: 20px 20px 20px 5px rgba(0, 0, 0, 0.185);
 
 }
 .time{
