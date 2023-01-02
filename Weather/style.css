@@ -247,3 +247,19 @@ body{
         height: 100px;
     }
 }
+
+@media screen and (max-width: 550px)  {
+
+    body{
+        flex-direction: column;
+    }
+
+    .container{
+        width:400px;
+        height: 100px;
+
+    }
+    .weather-details{
+        margin-top: 3rem;
+    }
+}
