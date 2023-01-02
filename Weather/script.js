@@ -62,17 +62,6 @@ function getWeather(){
                 const minutestoday = new Date(timeElapsed).getUTCMinutes();
                 let hoursCountry=Math.floor(Number(hourstoday)+(json.timezone/3600))
                 
-                if (hoursCountry<10 && minutestoday<10) {
-                    console.log(Math.floor(time.innerHTML=+Number('0'+hoursCountry)+":"+minutestoday))
-                }
-                if (hoursCountry<10) {
-                    console.log(Math.floor(time.innerHTML=+Number('0'+hoursCountry)+":"+minutestoday))
-                }
-                if (minutestoday<10) {
-                    console.log(Math.floor(time.innerHTML=Number(hoursCountry)+":"+'0'+minutestoday))
-                }
-
-
                 if (hoursCountry=='-9') {
                     console.log(Math.floor(time.innerHTML="15"+":"+minutestoday))
                 }
@@ -110,13 +99,13 @@ function getWeather(){
                 }
 
                 else{
-                    console.log(Math.floor(time.innerHTML=Number(hoursCountry)+":"+minutestoday))
+                    console.log(Math.floor(time.innerHTML=formatHours(hoursCountry)+":"+formatHours(minutestoday)))
                 }
 
-   
-
-
-
+                //add 0 before number if less than 10
+                function formatHours(time){
+                    return time < 10 ?(`0${time}`) :time;
+                }
 
                 if (hoursCountry>='6'&&hoursCountry<'20') {
                     dayNight.className="fa-solid fa-sun";
