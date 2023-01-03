@@ -236,123 +236,129 @@ function fiveDaysWeather(){
 
 
 
-            if(data.cod!='200'){
-                let minTemp0 = Number.MAX_SAFE_INTEGER;
-                let maxTemp0 = Number.MIN_SAFE_INTEGER;
-                let icon0 ='';
-    
-    
-    
-    
-    
-        zeroDateForecast.forEach(forecastItem => {
-            const temp0 = forecastItem.main.temp;
-            icon0=icon0 = forecastItem.weather[0].main;
-            if (temp0 < minTemp0) {
-                minTemp0 = temp0;
-            }
-            if (temp0 > maxTemp0) {
-                maxTemp0 = temp0;
-            }
-            });
-                itemzero.style.display="block";  
-                
-                const date0=zeroDate.substring(10,8).split('-').reverse().join('-');
-                const min0=Math.floor(minTemp0);
-                const max0=Math.ceil(maxTemp0);
-                const itemImgicon0=document.querySelector(".zero img");
-                const day0=document.querySelector(".zero p");
-                const tempM0=document.querySelector(".zero span");
-                console.log(`Date: ${date0}, Min temp: ${min0}, Max temp: ${max0}`);
-                day0.innerHTML=date0;
-                tempM0.innerHTML=max0+"º"+"&nbsp;&nbsp;"+min0+"º";
-                            const hou0=zeroDateForecast[0].dt_txt.substring(13,11);
-                function it0(){
-                switch (icon0) {
-                    case "Clear":
-                        itemImgicon0.src="images/clear.png";
-                        break;
-            
-                    case "Thunderstorm":
-                        itemImgicon0.src = "images/thunder.png";
-                        break;
-            
-                    case "Drizzle":
-                        itemImgicon0.src = "images/drizzle.png";
-                        break;
-            
-                    case "Rain":
-                        itemImgicon0.src = "images/rain.png";
-                        break;
-            
-                    case "Clouds":
-                        itemImgicon0.src = "images/cloud.png";
-                        break;
-            
-                    case "Mist":
-                        itemImgicon0.src = "images/mist.png";
-                        break;
-                    case "Smoke":
-                        itemImgicon0.src = "images/haze.png";
-                        break;
-                    case "Haze":
-                        itemImgicon0.src = "images/haze.png";
-                        break;
-                    case "Dust":
-                        itemImgicon0.src = "images/dust.png";
-                        break;
-                    case "Fog":
-                        itemImgicon0.src = "images/fog.png";
-                        break;
-                    case "Sand":
-                        itemImgicon0.src = "images/sand.png";
-                        break;
-                    case "Ash":
-                        itemImgicon0.src = "dust/mist.png";
-                        break;
-                    case"Squall":
-                        itemImgicon0.src = "images/squall.png";
-                        break;
-                    case "Tornado":
-                        itemImgicon0.src = "images/tornado.png";
-                        break;
-            
-                    case "Snow":
-                        itemImgicon0.src = "images/snow.png";
-                        break;
-                    default:
-                        itemImgicon0.src = "";
+       
+            const d = new Date();
+                if (d.getUTCHours()>=21 ) {
+                    
+                    itemzero.style.display = 'none';
                 }
-            }
-it0();
+                else{
+                    
+                    itemzero.style.display = 'flex';
+                    let minTemp0 = Number.MAX_SAFE_INTEGER;
+                    let maxTemp0 = Number.MIN_SAFE_INTEGER;
+                    let icon0 ='';
+        
+                    zeroDateForecast.forEach(forecastItem => {
+                    const temp0 = forecastItem.main.temp;
+                    icon0=icon0 = forecastItem.weather[0].main;
+                    if (temp0 < minTemp0) {
+                        minTemp0 = temp0;
+                    }
+                    if (temp0 > maxTemp0) {
+                        maxTemp0 = temp0;
+                    }
+        
+                    });
+                        const date0=zeroDate.substring(10,8).split('-').reverse().join('-');
 
+                        const min0=Math.floor(minTemp0);
 
+                        const max0=Math.ceil(maxTemp0);
 
+                        const itemImgicon0=document.querySelector(".zero img");
 
-            }
-            else{
-                itemzero.style.display="none"; 
-            }
+                        const day0=document.querySelector(".zero p");
+
+                        const tempM0=document.querySelector(".zero span");
+
+                        console.log(`Date: ${date0}, Min temp: ${min0}, Max temp: ${max0}`);
+
+                        day0.innerHTML=date0;
+
+                        tempM0.innerHTML=max0+"º"+"&nbsp;&nbsp;"+min0+"º";
+
+                        //console.log(icon1,icon2,icon3,icon4,icon5,icon0);
+                        function it0(){
+                            switch (icon0) {
+                                case "Clear":
+                                    itemImgicon0.src="images/clear.png";
+                                    break;
+                        
+                                case "Thunderstorm":
+                                    itemImgicon0.src = "images/thunder.png";
+                                    break;
+                        
+                                case "Drizzle":
+                                    itemImgicon0.src = "images/drizzle.png";
+                                    break;
+                        
+                                case "Rain":
+                                    itemImgicon0.src = "images/rain.png";
+                                    break;
+                        
+                                case "Clouds":
+                                    itemImgicon0.src = "images/cloud.png";
+                                    break;
+                        
+                                case "Mist":
+                                    itemImgicon0.src = "images/mist.png";
+                                    break;
+                                case "Smoke":
+                                    itemImgicon0.src = "images/haze.png";
+                                    break;
+                                case "Haze":
+                                    itemImgicon0.src = "images/haze.png";
+                                    break;
+                                case "Dust":
+                                    itemImgicon0.src = "images/dust.png";
+                                    break;
+                                case "Fog":
+                                    itemImgicon0.src = "images/fog.png";
+                                    break;
+                                case "Sand":
+                                    itemImgicon0.src = "images/sand.png";
+                                    break;
+                                case "Ash":
+                                    itemImgicon0.src = "dust/mist.png";
+                                    break;
+                                case"Squall":
+                                    itemImgicon0.src = "images/squall.png";
+                                    break;
+                                case "Tornado":
+                                    itemImgicon0.src = "images/tornado.png";
+                                    break;
+                        
+                                case "Snow":
+                                    itemImgicon0.src = "images/snow.png";
+                                    break;
+                                default:
+                                    itemImgicon0.src = "";
+                            }
+                            }
+                        it0();
+
+                }
+                
+                let minTemp1 = Number.MAX_SAFE_INTEGER;
+                let maxTemp1 = Number.MIN_SAFE_INTEGER;
+                let icon1 ='';
+
+                firstDateForecast.forEach(forecastItem => {
+                const temp1 = forecastItem.main.temp;
+                icon1=icon1 = forecastItem.weather[0].main;
+                if (temp1 < minTemp1) {
+                    minTemp1 = temp1;
+                }
+                if (temp1 > maxTemp1) {
+                    maxTemp1 = temp1;
+                }
+
+                });
+
         
 
-
-         
-
-            let minTemp1 = Number.MAX_SAFE_INTEGER;
-            let maxTemp1 = Number.MIN_SAFE_INTEGER;
-            let icon1 ='';
-
-        firstDateForecast.forEach(forecastItem => {
-            const temp1 = forecastItem.main.temp;
-            icon1=icon1 = forecastItem.weather[0].main;
-            if (temp1 < minTemp1) {
-                minTemp1 = temp1;
-            }
-            if (temp1 > maxTemp1) {
-                maxTemp1 = temp1;
-            }
-
-            });
+            
             let minTemp2 = Number.MAX_SAFE_INTEGER;
             let maxTemp2 = Number.MIN_SAFE_INTEGER;
             let icon2='';
@@ -420,6 +426,7 @@ it0();
                         const date3=thirdDate.substring(10,8).split('-').reverse().join('-');
                         const date4=fourthDate.substring(10,8).split('-').reverse().join('-');
                         const date5=fifthDate.substring(10,8).split('-').reverse().join('-');
+                        //const date0=zeroDate.substring(10,8).split('-').reverse().join('-');
                         
 
 
@@ -433,6 +440,8 @@ it0();
                         const max4=Math.ceil(maxTemp4);
                         const min5=Math.floor(minTemp5);
                         const max5=Math.ceil(maxTemp5);
+                        //const min0=Math.floor(minTemp0);
+                        //const max0=Math.ceil(maxTemp0);
 
 
                         
@@ -441,7 +450,7 @@ it0();
                         const itemImgicon3=document.querySelector(".four img");
                         const itemImgicon4=document.querySelector(".five img");
                         const itemImgicon5=document.querySelector(".six img");
-                        const itemImgicon0=document.querySelector(".zero img");
+                        //const itemImgicon0=document.querySelector(".zero img");
 
                         
                         const day2=document.querySelector(".two p");
@@ -449,7 +458,7 @@ it0();
                         const day4=document.querySelector(".four p");
                         const day5=document.querySelector(".five p");
                         const day6=document.querySelector(".six p");
-                        const day0=document.querySelector(".zero p");
+                        //const day0=document.querySelector(".zero p");
 
                         
                         const tempM2=document.querySelector(".two span");
@@ -457,7 +466,7 @@ it0();
                         const tempM4=document.querySelector(".four span");
                         const tempM5=document.querySelector(".five span");
                         const tempM6=document.querySelector(".six span");
-                        const tempM0=document.querySelector(".zero span");
+                        //const tempM0=document.querySelector(".zero span");
 
 
 
@@ -488,7 +497,7 @@ it0();
             window.scrollTo(0, 0);
 
 
-            console.log(icon1,icon2,icon3,icon4,icon5,);
+            //console.log(icon1,icon2,icon3,icon4,icon5,icon0);
 
                             
             
@@ -497,21 +506,7 @@ it0();
             const hou3=thirdDateForecast[0].dt_txt.substring(13,11);
             const hou4=fourthDateForecast[0].dt_txt.substring(13,11);
             const hou5=fifthDateForecast[0].dt_txt.substring(13,11);
-            //const hou0=zeroDateForecast[0].dt_txt.substring(13,11);
-
-            // const ih1=document.querySelector(".itemHour .ih1");
-            // const ih2=document.querySelector(".itemHour .ih2");
-            // const ih3=document.querySelector(".itemHour .ih3");
-            // const ih4=document.querySelector(".itemHour .ih4");
-            // const ih5=document.querySelector(".itemHour .ih5");
-            // const ih0=document.querySelector(".itemHour .ih0");
-            // ih1.innerHTML=hou1+'H';
-            // ih2.innerHTML=hou2+'H';
-            // ih3.innerHTML=hou3+'H';
-            // ih4.innerHTML=hou4+'H';
-            // ih5.innerHTML=hou5+'H';
-            // ih0.innerHTML=hou0+'H';
-
+            const hou0=zeroDateForecast[0].dt_txt.substring(13,11);
             
           
 
@@ -802,69 +797,12 @@ it0();
                         itemImgicon5.src = "";
                 }
             }
-            // function it0(){
-            //     switch (icon0) {
-            //         case "Clear":
-            //             itemImgicon0.src="images/clear.png";
-            //             break;
-            
-            //         case "Thunderstorm":
-            //             itemImgicon0.src = "images/thunder.png";
-            //             break;
-            
-            //         case "Drizzle":
-            //             itemImgicon0.src = "images/drizzle.png";
-            //             break;
-            
-            //         case "Rain":
-            //             itemImgicon0.src = "images/rain.png";
-            //             break;
-            
-            //         case "Clouds":
-            //             itemImgicon0.src = "images/cloud.png";
-            //             break;
-            
-            //         case "Mist":
-            //             itemImgicon0.src = "images/mist.png";
-            //             break;
-            //         case "Smoke":
-            //             itemImgicon0.src = "images/haze.png";
-            //             break;
-            //         case "Haze":
-            //             itemImgicon0.src = "images/haze.png";
-            //             break;
-            //         case "Dust":
-            //             itemImgicon0.src = "images/dust.png";
-            //             break;
-            //         case "Fog":
-            //             itemImgicon0.src = "images/fog.png";
-            //             break;
-            //         case "Sand":
-            //             itemImgicon0.src = "images/sand.png";
-            //             break;
-            //         case "Ash":
-            //             itemImgicon0.src = "dust/mist.png";
-            //             break;
-            //         case"Squall":
-            //             itemImgicon0.src = "images/squall.png";
-            //             break;
-            //         case "Tornado":
-            //             itemImgicon0.src = "images/tornado.png";
-            //             break;
-            
-            //         case "Snow":
-            //             itemImgicon0.src = "images/snow.png";
-            //             break;
-            //         default:
-            //             itemImgicon0.src = "";
-            //     }
-            // }
+
             it1();
             it2();
             it3();
             it4();
             it5();
-            // it0();
 
     });
     
