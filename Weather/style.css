@@ -30,6 +30,9 @@ body{
     font-family: 'Roboto', sans-serif;
     box-shadow: 0px 0px 20px 20px rgb(136 14 157 / 26%);
 }
+.container i{
+padding-left: 0.1rem;
+}
 .search-box{
     width: 100%;
     height: min-content;
@@ -44,6 +47,9 @@ body{
     font-weight: 500;
     text-transform: uppercase;
     padding-left: 34px;
+    outline: 1px solid #06283d25;
+    border-radius: 5px;
+    
 }
 .search-box input::placeholder{
     font-size: 20px;
@@ -53,7 +59,7 @@ body{
 }
 .search-box input:focus{
     outline: 1px solid #06283d6d;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 .search-box button{
     width: 50px;
@@ -63,9 +69,10 @@ body{
     border-radius: 50%;
     font-size: 1.4rem;
     color: #06283D;
+    border: 1px solid #06283d6d;
 }
 .search-box button:focus{
-    border: 1px solid #06283d6d;
+    border: 1px solid #06283d30;
 }
 .search-box button:hover{
     background-color: #06283d73;
