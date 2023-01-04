@@ -471,7 +471,7 @@ function fiveDaysWeather() {
                 const hou3 = thirdDateForecast[0].dt_txt.substring(13, 11);
                 const hou4 = fourthDateForecast[0].dt_txt.substring(13, 11);
                 const hou5 = fifthDateForecast[0].dt_txt.substring(13, 11);
-                const hou0 = zeroDateForecast[0].dt_txt.substring(13, 11);
+
 
                 function it1() {
                     switch (icon1) {
