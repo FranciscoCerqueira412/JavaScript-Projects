@@ -10,7 +10,7 @@ Promise.all([
 
 
 
-]).then(startVideo)
+])
 
 
 
@@ -25,4 +25,4 @@ function startVideo() {
         console.log(`Error: ${err}`);
     })
 }
-
+startVideo();
