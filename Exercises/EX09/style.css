@@ -1,0 +1,24 @@
+*{    
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+}
+.container{
+    background-color: rgb(255, 0, 0);
+    height: 100vh;
+}
+
+.image{
+    width: 25vmin;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+.image[data-status="inactive"]{
+    display: none;
+}
+.image[data-status="active"]{
+    display: block;
+}
