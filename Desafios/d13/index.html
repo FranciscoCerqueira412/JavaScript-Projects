@@ -5,17 +5,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
+        <script defer src="face-api.min.js"></script>
         <script defer src="script.js"></script>
-        <link rel="shortcut icon" href="images/1.png" type="image/x-icon">
-        <title>Random Password</title>
+        <title>Camera</title>
     </head>
 
     <body>
-       <h1>Random Password Generator</h1>
-       <input class="pass" type="text" placeholder="Generate Password" >
-       <button class="btn">Generate</button>
-       <h2>Choose a number of Characters of your password!<input class="num" type="number" min="1" max="16" value="8"></h2>
-       
-        
+        <video id="video" autoplay ></video>
     </body>
 </html>

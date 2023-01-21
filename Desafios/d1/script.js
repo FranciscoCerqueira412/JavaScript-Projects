@@ -1,15 +1,31 @@
-// Get the video element
-let video = document.getElementById('video');
+const button=document.querySelector('.btn');
+const input=document.querySelector('.pass');
+const inputNum=document.querySelector('.num');
+const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!#$%&?';
 
-// Ask for camera and microphone permissions
-function startVideo() {
-    navigator.mediaDevices.getUserMedia({ video: {width:600, height:400}, audio: false })
-    .then(stream => {
-        // Set the video element's source to the camera stream
-        video.srcObject = stream;
-    })
-    .catch(err => {
-        console.log(`Error: ${err}`);
-    })
+function GeneratePassword(){
+    let password = '';
+    
+    for (let index = 0; index < inputNum.value; index++) {
+        password+=characters.charAt(Math.floor(Math.random()*characters.length));
+    }
+    return password;
 }
-startVideo();
+
+button.addEventListener('click',()=>{
+
+
+    input.value=GeneratePassword();
+    if (!(inputNum.value) || inputNum.value>16) {
+        
+        setTimeout(function(){
+            input.classList.add('small-placeholder');
+            input.value='Invalid Number Of Characters..'
+        })
+        
+    }
+    input.classList.remove('small-placeholder');
+    
+
+
+});
